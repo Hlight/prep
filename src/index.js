@@ -108,7 +108,13 @@ async function prepRoute(route, configuration) {
 
     debug('Nightmare started')
     
-    const host = configuration.hostname ? configuration.hostname : `http${configuration.https ? 's' : ''}://localhost:${program.port}`
+    // DISABLED DUE TO ATTEMPT TO ACCESS CONFIGURED HOST
+    // WHICH IS WEIRD B/C PREP FIRES UP AN EXPRESS WEBSERVER ON UNIQUE PORT FOR PUPROSE
+    // OF SERVING APP TO BE PRERENDERED ... THIS IS A BUG WITH PREP NO?
+    // const host = configuration.hostname ? configuration.hostname : `http${configuration.https ? 's' : ''}://localhost:${program.port}`
+    // We always use localhost + prep.port to serve our local files for prerender - a.o.2017-08-24
+    const host = 'http' + (configuration.https ? 's' : '') + '://localhost:' + program.port;
+
     const url = `${host}/${route}`
     
     const content = await nightmare

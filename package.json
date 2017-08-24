@@ -1,7 +1,7 @@
 {
-  "name": "prep",
+  "name": "bf-prep",
   "version": "1.6.2",
-  "description": "Server-side rendering tool for your web app. Prerenders your app into static HTML files and supports routing.",
+  "description": "Server-side rendering tool for your web app. Prerenders your app into static HTML files and supports routing. Forked for BigFish BAM DEV team.",
   "bin": "lib/index.js",
   "files": [
     "LICENSE",
